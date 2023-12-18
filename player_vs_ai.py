@@ -1,14 +1,15 @@
 import checkers
 import gamebot
 from time import sleep
+
 ##COLORS##
 #             R    G    B
-WHITE = (255, 255, 255)
-BLUE = (0,   0, 255)
-RED = (255,   0,   0)
-BLACK = (0,   0,   0)
-GOLD = (255, 215,   0)
-HIGH = (160, 190, 255)
+WHITE    = (255, 255, 255)
+BLUE     = (  0,   0, 255)
+RED      = (255,   0,   0)
+BLACK    = (  0,   0,   0)
+GOLD     = (255, 215,   0)
+HIGH     = (160, 190, 255)
 
 ##DIRECTIONS##
 NORTHWEST = "northwest"
@@ -26,7 +27,7 @@ def main():
             game, 
             BLUE, 
             mid_eval = 'piece_and_board_pov', 
-            method = 'alpha_beta', 
+            method = 'minmax', 
             depth = 3, 
             end_eval = 'sum_of_dist'
             )
@@ -41,7 +42,7 @@ def main():
                 # TO start player's turn uncomment the below line and comment a couple  of line below than that
                 game.player_turn()
             
-                print('Total nodes explored in this step are', count_nodes)
+                # print('Total nodes explored in this step are', count_nodes)
                 game.update()
             if game.endit:
                 break

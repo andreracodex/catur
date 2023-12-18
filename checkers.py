@@ -142,7 +142,7 @@ class Game:
 
 class Graphics:
 	def __init__(self):
-		self.caption = "Checkers"
+		self.caption = "Mainan Catur"
 
 		self.fps = 60
 		self.clock = pygame.time.Clock()

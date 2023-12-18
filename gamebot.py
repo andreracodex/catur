@@ -7,22 +7,20 @@ import math
 from time import sleep
 pygame.font.init()
 
-
 ##COLORS##
 #             R    G    B
-WHITE = (255, 255, 255)
-BLUE = (0,   0, 255)
-RED = (255,   0,   0)
-BLACK = (0,   0,   0)
-GOLD = (255, 215,   0)
-HIGH = (160, 190, 255)
+WHITE    = (255, 255, 255)
+BLUE     = (  0,   0, 255)
+RED      = (255,   0,   0)
+BLACK    = (  0,   0,   0)
+GOLD     = (255, 215,   0)
+HIGH     = (160, 190, 255)
 
 ##DIRECTIONS##
 NORTHWEST = "northwest"
 NORTHEAST = "northeast"
 SOUTHWEST = "southwest"
 SOUTHEAST = "southeast"
-
 
 class Bot:
     def __init__(self, game, color, method='random', mid_eval=None, end_eval=None, depth=1):
