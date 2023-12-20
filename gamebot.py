@@ -58,9 +58,9 @@ class Bot:
                 print('END EVAL is on')
                 self._end_eval_time = True
                 self._current_eval = self._end_eval
-        if self.method == 'random':
-            self._random_step(board)
-        elif self.method == 'minmax':
+        # if self.method == 'random':
+        #     self._random_step(board)
+        if self.method == 'minmax':
             self._minmax_step(board)
         elif self.method == 'alpha_beta':
             self._alpha_beta_step(board)
@@ -165,15 +165,15 @@ class Bot:
                         (i, j, board.legal_moves(i, j, self.game.hop)))
         return possible_moves
 
-    def _random_step(self, board):
-        possible_moves = self._generate_all_possible_moves(board)
-        if possible_moves == []:
-            self.game.end_turn()
-            return
-        random_move = random.choice(possible_moves)
-        rand_choice = random.choice(random_move[2])
-        self._action(random_move, rand_choice, board)
-        return
+    # def _random_step(self, board):
+    #     possible_moves = self._generate_all_possible_moves(board)
+    #     if possible_moves == []:
+    #         self.game.end_turn()
+    #         return
+    #     random_move = random.choice(possible_moves)
+    #     rand_choice = random.choice(random_move[2])
+    #     self._action(random_move, rand_choice, board)
+    #     return
 
     def _minmax_step(self, board):
         random_move, random_choice, _ = self._minmax(
