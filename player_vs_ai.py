@@ -2,16 +2,16 @@ import checkers
 import gamebot
 from time import sleep
 
-##COLORS##
+## COLORS##
 #             R    G    B
-WHITE    = (255, 255, 255)
-BLUE     = (  0,   0, 255)
-RED      = (255,   0,   0)
-BLACK    = (  0,   0,   0)
-GOLD     = (255, 215,   0)
-HIGH     = (160, 190, 255)
+WHITE = (255, 255, 255)
+BLUE = (0,   0, 255)
+RED = (255,   0,   0)
+BLACK = (0,   0,   0)
+GOLD = (255, 215,   0)
+HIGH = (160, 190, 255)
 
-##DIRECTIONS##
+## DIRECTIONS##
 NORTHWEST = "northwest"
 NORTHEAST = "northeast"
 SOUTHWEST = "southwest"
@@ -24,13 +24,13 @@ def main():
         game.setup()
 
         random_bot_blue = gamebot.Bot(
-            game, 
-            BLUE, 
-            mid_eval = 'piece_and_board_pov', 
-            method = 'minmax', 
-            depth = 3, 
-            end_eval = 'sum_of_dist'
-            )
+            game,
+            BLUE,
+            mid_eval='piece_and_board_pov',
+            method='minmax',
+            depth=3,
+            end_eval='sum_of_dist'
+        )
         while True:  # main game loop
             if game.turn == BLUE:
                 # TO start player's turn uncomment the below line and comment a couple  of line below than that
@@ -41,7 +41,7 @@ def main():
             else:
                 # TO start player's turn uncomment the below line and comment a couple  of line below than that
                 game.player_turn()
-            
+
                 # print('Total nodes explored in this step are', count_nodes)
                 game.update()
             if game.endit:
