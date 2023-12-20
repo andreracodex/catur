@@ -23,7 +23,7 @@ SOUTHWEST = "southwest"
 SOUTHEAST = "southeast"
 
 class Bot:
-    def __init__(self, game, color, method='random', mid_eval=None, end_eval=None, depth=1):
+    def __init__(self, game, color, method='minmax', mid_eval=None, end_eval=None, depth=1):
         self.method = method
         if mid_eval == 'piece2val':
             self._mid_eval = self._piece2val
